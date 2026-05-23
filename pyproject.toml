@@ -1,0 +1,15 @@
+[project]
+name = "llm-proxy1"
+version = "0.1.0"
+description = "Proxy for interacting with web browser llms programatically."
+authors = [
+    { name = "Bogomil Filipov", email = "bogomil.filipov@proton.me" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "patchright (>=1.58.2,<2.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
