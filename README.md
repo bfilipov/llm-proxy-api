@@ -19,12 +19,8 @@ Send a message to the endpoint and receive the full assistant response – all s
 ## Installation
 
 ```bash
-# Clone the repository (or copy the files)
-git clone <your-repo>
-cd <your-repo>
-
 # Install dependencies
-pip install fastapi uvicorn playwright python-dotenv
+poetry install
 
 # Install the Playwright Chromium browser
 playwright install chromium
