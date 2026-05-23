@@ -18,16 +18,16 @@ Send a message to the endpoint and receive the full assistant response – all s
 
 ## Installation
 
-```bash
+```
 # Install dependencies
 poetry install
 
 # Install the Playwright Chromium browser
 playwright install chromium
+```
 
 ## Configuration
 Create a .env file in the project root:
-
 ```
 QWEN_EMAIL=your_email@example.com
 QWEN_PASSWORD=your_password
