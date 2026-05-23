@@ -1,4 +1,4 @@
-# Qwen Chat API
+# LLM Proxy API
 
 A FastAPI‑based service that automates [Qwen Chat](https://chat.qwen.ai/) using Playwright.  
 Send a message to the endpoint and receive the full assistant response – all session handling, login, and cookie persistence are managed automatically.
