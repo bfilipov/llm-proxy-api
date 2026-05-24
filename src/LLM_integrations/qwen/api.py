@@ -107,6 +107,7 @@ class QwenApi:
 
         self._wait_for_response_stable()
         last_response = self.page.locator(".qwen-chat-message-assistant").last.inner_text()
+        last_response = last_response.replace('Thinking completed\n', '')
         return last_response
 
     def _wait_for_response_stable(
@@ -137,9 +138,10 @@ class QwenApi:
             try:
                 current_text = last_response.inner_text(timeout=1000)
             except Exception:
-                current_text = ""  # element not present yet
+                current_text = ""
 
-            if current_text == previous_text and thinking_text_box.inner_text() == thinking_completed_text:
+            thinking_text = thinking_text_box.last.inner_text()
+            if current_text == previous_text and thinking_text == thinking_completed_text:
                 stable_time += poll_interval
             else:
                 print('Response not stabilized yet.')

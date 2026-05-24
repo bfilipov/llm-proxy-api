@@ -7,7 +7,9 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "patchright (>=1.58.2,<2.0.0)"
+    "patchright (>=1.58.2,<2.0.0)",
+    "openai (>=2.38.0,<3.0.0)",
+    "fastapi (>=0.136.3,<0.137.0)"
 ]
 
 [build-system]
