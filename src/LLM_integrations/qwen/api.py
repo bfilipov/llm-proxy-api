@@ -100,7 +100,7 @@ class QwenApi:
         # Clear any stale state (optional: wait for new message area)
         textarea = self.page.locator('textarea.message-input-textarea')
         textarea.wait_for(state="visible", timeout=5000)
-        textarea.type(message, delay=50)
+        textarea.fill(message)
 
         send_button = self.page.locator('button.send-button')
         send_button.click()
@@ -134,7 +134,6 @@ class QwenApi:
         thinking_text_box = self.page.locator(".qwen-chat-thinking-status-card-title-text")
 
         while True:
-            print('Check if response stabilized...')
             try:
                 current_text = last_response.inner_text(timeout=1000)
             except Exception:
@@ -144,7 +143,6 @@ class QwenApi:
             if current_text == previous_text and thinking_text == thinking_completed_text:
                 stable_time += poll_interval
             else:
-                print('Response not stabilized yet.')
                 stable_time = 0
                 previous_text = current_text
 
